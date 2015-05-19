@@ -23,7 +23,7 @@ XXTEAFillRandomKey(key);
 // output: length: 32/36
 NSData *data = [@"Hello, world! 你好，世界！" dataUsingEncoding:NSUTF8StringEncoding];
 NSData *encrypedData = XXTEAEncryptData(data, key);
-NSLog(@"Length: %zd/%zd", data.length, encrypedData.length);
+NSLog(@"Length: %tu/%tu", data.length, encrypedData.length);
 
 // decrypt data chunk
 // output: Hello, world! 你好，世界！
