@@ -33,6 +33,11 @@ extern "C" {
 #endif
 
 /**
+ * Secret key length.
+ */
+extern const size_t XXTEA_KEY_LENGTH;
+
+/**
  * Encrypt @p data using specified key @p key.
  *
  * @param data The @p NSData object to be encrypted.

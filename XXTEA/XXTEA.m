@@ -26,6 +26,8 @@
 #import <stdlib.h>
 #import "XXTEA.h"
 
+const size_t XXTEA_KEY_LENGTH = 16;
+
 #define EVERBEEN_XXTEA_DELTA 0x9e3779b9
 #define EVERBEEN_XXTEA_MX (((z>>5^y<<2) + (y>>3^z<<4)) ^ ((sum^y) + (k[(p&3)^e]^z)))
 
@@ -95,5 +97,5 @@ NSData *XXTEADecryptData(NSData *code, const unsigned char *key) {
 
 
 void XXTEAFillRandomKey(unsigned char *key) {
-	arc4random_buf((void *)key, 16);
+	arc4random_buf((void *)key, XXTEA_KEY_LENGTH);
 }

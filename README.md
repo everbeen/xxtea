@@ -16,7 +16,7 @@ Make sure '**Create groups**' in 'Added folders' is checked.
 #import "XXTEA.h"
 
 // create a random key
-unsigned char key[16];
+unsigned char key[XXTEA_KEY_LENGTH];
 XXTEAFillRandomKey(key);
 
 // encrypt sample data
