@@ -48,7 +48,7 @@ extern const size_t XXTEA_KEY_LENGTH;
 NSData *XXTEAEncryptData(NSData *data, const unsigned char *key);
 
 /**
- * Decrypt data chunk @data using specified key @p key.
+ * Decrypt data chunk @p data using specified key @p key.
  *
  * @param data Data chunk to be decrypted.
  * @param key 16 bytes secret key.
