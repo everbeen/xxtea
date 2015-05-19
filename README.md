@@ -1,6 +1,7 @@
 # XXTEA
-Objective-C implementation of XXTEA cipher for OS X and iOS.
+Objective-C implementation of [XXTEA][wikipedia/xxtea] cipher for OS X and iOS.
 
+[wikipedia/xxtea]: http://en.wikipedia.org/wiki/XXTEA
 
 # Installation
 

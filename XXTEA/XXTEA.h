@@ -33,7 +33,7 @@ extern "C" {
 #endif
 
 /**
- * Encrypt @p data using specified key @key.
+ * Encrypt @p data using specified key @p key.
  *
  * @param data The @p NSData object to be encrypted.
  * @param key 16 bytes secret key.
@@ -43,7 +43,7 @@ extern "C" {
 NSData *XXTEAEncryptData(NSData *data, const unsigned char *key);
 
 /**
- * Decrypt data chunk @data using specified key @key.
+ * Decrypt data chunk @data using specified key @p key.
  *
  * @param data Data chunk to be decrypted.
  * @param key 16 bytes secret key.
