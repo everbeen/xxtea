@@ -10,24 +10,26 @@ to your project directory (or any subdirectory).
 
 Make sure '**Create groups**' in 'Added folders' is checked.
 
-# Sample
+# Usage
 
 ```objective-c
 #import "XXTEA.h"
 
+NSString *sampleString = @"Hello, world! 你好，世界！";
+
 // create a random key
-unsigned char key[XXTEA_KEY_LENGTH];
+char key[XXTEA_KEY_LENGTH];
 XXTEAFillRandomKey(key);
 
 // encrypt sample data
 // output: length: 32/36
-NSData *data = [@"Hello, world! 你好，世界！" dataUsingEncoding:NSUTF8StringEncoding];
-NSData *encrypedData = XXTEAEncryptData(data, key);
-NSLog(@"Length: %tu/%tu", data.length, encrypedData.length);
+NSData *data = [sampleString dataUsingEncoding:NSUTF8StringEncoding];
+NSData *encryptedData = XXTEAEncryptData(data, key);
+NSLog(@"Length: %tu/%tu", data.length, encryptedData.length);
 
 // decrypt data chunk
 // output: Hello, world! 你好，世界！
-data = XXTEADecryptData(encrypedData, key);
+data = XXTEADecryptData(encryptedData, key);
 NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
 ```
 

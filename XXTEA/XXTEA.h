@@ -45,7 +45,7 @@ extern const size_t XXTEA_KEY_LENGTH;
  *
  * @return Encrypted data chunk or @p nil if error occurred.
  */
-NSData *XXTEAEncryptData(NSData *data, const unsigned char *key);
+NSData *XXTEAEncryptData(NSData *data, const void *key);
 
 /**
  * Decrypt data chunk @p data using specified key @p key.
@@ -55,14 +55,14 @@ NSData *XXTEAEncryptData(NSData *data, const unsigned char *key);
  *
  * @return Origin data or @p nil if error occurred.
  */
-NSData *XXTEADecryptData(NSData *data, const unsigned char *key);
+NSData *XXTEADecryptData(NSData *data, const void *key);
 
 /**
  * Create a random secret key and fill it to @p key with ARC4-derived random data.
  *
  * @param key 16 bytes memory region.
  */
-void XXTEAFillRandomKey(unsigned char *key);
+void XXTEAFillRandomKey(void *key);
 
 #ifdef __cplusplus
 }

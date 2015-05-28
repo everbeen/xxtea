@@ -67,7 +67,7 @@ static void btea(uint32_t *v, int n, uint32_t const k[4]) {
 
 #pragma mark -
 
-NSData *XXTEAEncryptData(NSData *data, const unsigned char *key) {
+NSData *XXTEAEncryptData(NSData *data, const void *key) {
 	uint32_t data_length = (uint32_t)data.length;
 	uint32_t len = (data_length + 4) >> 2;
 	if ((data_length & 3) != 0) ++len;
@@ -80,7 +80,7 @@ NSData *XXTEAEncryptData(NSData *data, const unsigned char *key) {
 	return [NSData dataWithBytesNoCopy:bytes length:bytes_len];
 }
 
-NSData *XXTEADecryptData(NSData *code, const unsigned char *key) {
+NSData *XXTEADecryptData(NSData *code, const void *key) {
 	if ((code.length & 3) != 0)
 		return nil;
 	uint32_t bytes_len = (uint32_t)code.length;
@@ -96,6 +96,6 @@ NSData *XXTEADecryptData(NSData *code, const unsigned char *key) {
 }
 
 
-void XXTEAFillRandomKey(unsigned char *key) {
-	arc4random_buf((void *)key, XXTEA_KEY_LENGTH);
+void XXTEAFillRandomKey(void *key) {
+	arc4random_buf(key, XXTEA_KEY_LENGTH);
 }
