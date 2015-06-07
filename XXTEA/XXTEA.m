@@ -33,8 +33,8 @@ const size_t XXTEA_KEY_LENGTH = 16;
 
 static void btea(uint32_t *v, int n, uint32_t const k[4]) {
 	uint32_t y, z, sum;
-    unsigned p, rounds, e;
-    if (n > 1) {              /* Coding Part */
+	unsigned p, rounds, e;
+	if (n > 1) {              /* Coding Part */
 		rounds = 6 + 52/n;
 		sum = 0;
 		z = v[n-1];
@@ -48,7 +48,7 @@ static void btea(uint32_t *v, int n, uint32_t const k[4]) {
 			y = v[0];
 			z = v[n-1] += EVERBEEN_XXTEA_MX;
 		} while (--rounds);
-    } else if (n < -1) {      /* Decoding Part */
+	} else if (n < -1) {      /* Decoding Part */
 		n = -n;
 		rounds = 6 + 52/n;
 		sum = rounds*EVERBEEN_XXTEA_DELTA;
@@ -62,7 +62,7 @@ static void btea(uint32_t *v, int n, uint32_t const k[4]) {
 			z = v[n-1];
 			y = v[0] -= EVERBEEN_XXTEA_MX;
 		} while ((sum -= EVERBEEN_XXTEA_DELTA) != 0);
-    }
+	}
 }
 
 #pragma mark -
